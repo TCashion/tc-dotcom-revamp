@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <NavBar />
     <div>
       <Logo />
       <h1 class="title">
@@ -28,9 +29,13 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import { Component, Vue } from "nuxt-property-decorator";
+import NavBar from "../components/Nav.vue";
 
-export default Vue.extend({})
+@Component({
+  components: { NavBar },
+})
+export default class Base extends Vue {}
 </script>
 
 <style>
@@ -44,16 +49,8 @@ export default Vue.extend({})
 }
 
 .title {
-  font-family:
-    'Quicksand',
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   display: block;
   font-weight: 300;
   font-size: 100px;
